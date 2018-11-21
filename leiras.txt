@@ -1,0 +1,30 @@
+Feladatok
+1, PregMatch
+single-
+Adószám validáció, tegyük fel hogy a Userek a $userInputs tömben megadott számokat írják be a megfelelő mezőbe.
+Mivel nem szertejük ráerőltetni a formátumokat a userre ezért cliens oldalon nem kötelező a kötőjel (a jó helyen) de lehet is.
+Reguláris kifejezeéssel válogasd ki azokat az adószámokat amelyek megfelelenek a patternek
+megoldás a fájlban
+
+replace-
+Megvannak a megfelelő adószámok, viszont adatbázisban csak kötöjellel tárolhatjuk, tegyél be a megfelelő helyre kötőjelet ha a user kiahagyta.
+megoldás a fájlban
+
+2, Bash
+(azért npm-debug.log mert itthon nem férek hozzá a spica logokhoz de a lényeg ugyan az)
+Ezen a fájl esetében keressük ki grep a parancs egítségéve laz összes HTTp requestet a methoddal együtt de 'http request' szavak nélkül
+az én megoldásom :
+grep -oP 'http request \K\w{3,4} \w{4,5}\W{3}.*' npm-debug.log
+
+3, Find And Replace
+Használjuk kicsit a z IDEAT annak is a Find and replace funkcióját, a story az hogy valaki véletlenül
+minden változó nagy kezdőbetüvel írt az egész fájlban, cseréld ki őket ugyanrara a betüre de kicsire
+
+find : \$(?<a>[A-Z]{1})
+replace : \$\l${a}
+
+4, FLAGS
+egy fájlon belül két feladat
+1,Az összes Mondatkezdő szót keresd meg a $ŧext változóban a megodldás a feladatban
+2, Az összes egymást követő 2 vagy több egymást követő nagybetűt keresd meg az $array változóban ,
+    ha az egymást követő nagybetűk száma a 2 töbszöröse akkor az több találtnak számítson pl : AAA - egy találat AAAA-két találat
